@@ -19,6 +19,12 @@ answer_voter = db.Table(
     db.Column('answer_id', db.Integer, db.ForeignKey('answer.id', ondelete='CASCADE'), primary_key=True)
 )
 
+'''# Category 테이블. '질문', '강좌', '자유게시판' 으로 나누기.
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    category_id = db.Column(db.String(200), nullable=False)
+    label = db.Column(db.String(200), nullable=False)
+'''
 
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)  # 플라스크는 데이터 타입이 db.Integer이고 기본키로 지정한 속성은 sequence 기능 자동 적용.
